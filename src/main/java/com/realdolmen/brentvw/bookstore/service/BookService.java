@@ -6,14 +6,12 @@ import com.realdolmen.brentvw.bookstore.repository.BookRepository;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import javax.jws.WebResult;
-import javax.jws.WebService;
+import javax.jws.*;
 import java.util.List;
 
 @Stateless
 @WebService(serviceName = "BookService")
+@HandlerChain(file = "handlers.xml")
 public class BookService {
     @Inject
     private BookRepository bookRepository;
